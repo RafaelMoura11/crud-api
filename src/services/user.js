@@ -8,7 +8,7 @@ const findUserById = async (id) => (
   User.findOne({ where: { id } })
 );
 
-const findUsers = async (id) => (
+const findUsers = async () => (
   User.findAll()
 );
 

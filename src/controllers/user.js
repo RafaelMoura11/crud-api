@@ -15,7 +15,7 @@ const findUserById = async (req, res) => {
   return res.status(200).json(user);
 }
 
-const findUsers = async (req, res) => {  
+const findUsers = async (_req, res) => {  
   const users = await service.findUsers();
   return res.status(200).json(users);
 }
