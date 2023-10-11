@@ -16,9 +16,12 @@ const updateUser = async (id, firstName, lastName, role, email) => (
   User.update({ firstName, lastName, role, email }, { where: { id } })
 );
 
+const deleteUser = async(id) => User.destroy({ where: { id } });
+
 module.exports = {
     registerUser,
     updateUser,
     findUserById,
-    findUsers
+    findUsers,
+    deleteUser
 };

@@ -33,9 +33,17 @@ const updateUser = async (req, res) => {
     return res.status(404).json("Usuário não existe!");
 }
 
+const deleteUser = async (req, res) => {
+    const { id } = req.params;
+    await service.deleteUser(id);
+    return res.status(200).json(`Usuário deletado com sucesso!`);
+
+}
+
 module.exports = {
     registerUser,
     updateUser,
     findUserById,
-    findUsers
+    findUsers,
+    deleteUser
 };
