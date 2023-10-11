@@ -15,6 +15,11 @@ const findUserById = async (req, res) => {
   return res.status(200).json(user);
 }
 
+const findUsers = async (req, res) => {  
+  const users = await service.findUsers();
+  return res.status(200).json(users);
+}
+
 const updateUser = async (req, res) => {
     const { id } = req.params;
     const { firstName, lastName, role, email } = req.body;
@@ -31,5 +36,6 @@ const updateUser = async (req, res) => {
 module.exports = {
     registerUser,
     updateUser,
-    findUserById
+    findUserById,
+    findUsers
 };
